@@ -1,18 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <meta name="title" content="CENTRO-net | Code Challenge">
+    <meta name="description" content="Diseño y desarrollo web: Evaluación de primer bloque de HTML y CSS">
+    <meta name="image" content="https://yuyosha.github.io/my-links/">
+    <meta name="url" content="https://yuyosha.github.io/my-links/">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yuyosha.github.io/my-links/">
+    <meta property="twitter:title" content="CENTRO-net | Code Challenge">
+    <meta property="twitter:description" content="Diseño y desarrollo web: Evaluación de primer bloque de HTML y CSS">
+    <meta property="twitter:image" content="https://yuyosha.github.io/my-links/">
+    <meta property="og:title" content="CENTRO-net | Code Challenge">
+    <meta property="og:description" content="Diseño y desarrollo web: Evaluación de primer bloque de HTML y CSS">
+    <meta property='og:image' content='https://yuyosha.github.io/my-links/'>
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="640">
+    <meta property="og:url" content="https://yuyosha.github.io/my-links/">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://yuyosha.github.io/my-links/">
+    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel=<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YuYosha</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="stylesheet" href="./CSS/style.css">
 
     <style>
-        /* --- Loading Screen --- */
+        :root {
+            --accent: #007BFF;
+            --text-color: #000000;
+            --bg-color: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            transition: background-color 0.6s ease, color 0.6s ease;
+            position: relative;
+            overflow-x: hidden;
+        }
+
         #loading {
             position: fixed;
             top: 0;
@@ -30,27 +71,212 @@
         #loading img {
             width: 120px;
             height: auto;
+            animation: bounce 1s infinite;
         }
 
         #loading.slide-left {
             transform: translateX(-100%);
         }
 
-        /* Hide content until loader is gone */
         #page-content {
             display: none;
+            padding: 40px 100px;
+            max-width: 500000px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 2;
+        }
+
+        
+        body.inverted {
+            --text-color: #ffffff;
+            --bg-color: #000000;
+        }
+
+        body.inverted .button {
+            border-color: #ffffff;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        body.inverted .button:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        h1 {
+            font-size: 64px;
+            text-align: center;
+            line-height: 1.1em;
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: var(--accent);
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        h1:hover {
+            transform: scale(1.05);
+            color: var(--text-color);
+        }
+
+        h2 {
+            font-size: 48px;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        h2:hover {
+            transform: scale(1.03);
+            color: var(--accent);
+        }
+
+        h3 {
+            font-size: 32px;
+            text-align: center;
+            font-weight: 500;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        h3:hover {
+            transform: scale(1.02);
+            color: var(--accent);
+        }
+
+        p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: justify;
+            font-weight: 300;
+        }
+
+        .nav-link {
+            padding: 10px 20px;
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            margin: 10px;
+            text-decoration: none;
+            transition: all 300ms ease;
+            color: var(--accent);
+            font-weight: 500;
+            position: relative;
+            background: transparent;
+        }
+
+        .nav-link:hover {
+            background-color: var(--accent);
+            color: #ffffff;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .button {
+            padding: 12px 40px;
+            border: 2px solid var(--accent);
+            background-color: var(--bg-color);
+            border-radius: 12px;
+            margin: 20px 0px;
+            text-decoration: none;
+            transition: all 300ms ease;
+            color: var(--accent);
+            display: inline-block;
+            font-size: 20px;
+            font-weight: 600;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:hover {
+            background-color: var(--accent);
+            color: #ffffff;
+            transform: scale(1.08);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        .corner-pillars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .corner-pillars div {
+            position: absolute;
+            width: 40px;
+            height: 120px;
+            background: var(--accent);
+            opacity: 0.2;
+            border-radius: 8px;
+            animation: pulse 4s infinite ease-in-out;
+        }
+
+        .corner-pillars .top-left {
+            top: 20px;
+            left: 20px;
+        }
+
+        .corner-pillars .top-right {
+            top: 20px;
+            right: 20px;
+        }
+
+        .corner-pillars .bottom-left {
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .corner-pillars .bottom-right {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scaleY(1);
+                opacity: 0.2;
+            }
+            50% {
+                transform: scaleY(1.2);
+                opacity: 0.35;
+            }
+        }
+
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
         }
     </style>
 </head>
+
 <body>
-    <!-- 🔹 Loading Screen -->
+    <div class="corner-pillars">
+        <div class="top-left"></div>
+        <div class="top-right"></div>
+        <div class="bottom-left"></div>
+        <div class="bottom-right"></div>
+    </div>
+    
+    
     <div id="loading">
         <img src="./img/pac.gif" alt="Loading...">
     </div>
 
-    <!-- 🔹 Wrap your page inside this -->
+    
     <div id="page-content">
         <header>
+            <p>✡︎□︎◆︎ ♍︎♋︎■︎ ❒︎♏︎⬥︎❒︎♓︎⧫︎♏︎ ⍓︎□︎◆︎❒︎ ⬧︎⧫︎□︎❒︎⍓︎ ♋︎ ♒︎◆︎■︎♎︎❒︎♏︎♎︎ ⧫︎♓︎❍︎♏︎⬧︎📪︎ ⧫︎❒︎⍓︎♓︎■︎♑︎ ⧫︎□︎ ⧫︎♋︎🙵♏︎ ♍︎□︎■︎⧫︎❒︎□︎●︎📪︎ ⧫︎□︎ ♍︎♒︎♋︎■︎♑︎♏︎ ⧫︎♒︎♏︎ ◻︎♋︎⧫︎♒︎◻︎♌︎◆︎⧫︎ ♓︎♐︎ ⧫︎♒︎♏︎ ♏︎■︎♎︎♓︎■︎♑︎ ♓︎⬧︎ ♍︎♋︎❒︎❖︎♏︎♎︎ ♓︎■︎ ⬧︎⧫︎□︎■︎♏︎📪︎ ■︎□︎ ♋︎❍︎□︎◆︎■︎⧫︎ □︎♐︎ ♓︎■︎🙵 ♍︎♋︎■︎ ♏︎❒︎♋︎⬧︎♏︎ ♓︎⧫︎📬︎</p>
             <hr>
             <h1>-Eugenio Ramirez-</h1>
         </header id="main-header">
@@ -74,7 +300,7 @@
                 <article id="idiota">
                     <hr>
                     <h3>♓︎♎︎♓︎□︎⧫︎♋︎-Idiota-♓︎♎︎♓︎□︎⧫︎♋︎ </h3>
-                    <p>Soy un Idiota si...    
+                    <p>Soy un Idiota si...    
                         Pero por que? pues amo los videojuegos, la animacion, la escritura, el anime, etc...
                         cosas asi de rarito ni muy artistico caigo como en la mitad, me gusta el "arte" pero no veo necesidad de profundizar en significados que al final de seguro alguien se invento en 10 segundos o algo asi.... podria decir que me gustan las cosas simples, claro con profundidad en su significado pero nada de eso artistico moderno de clase alta solo arte y ya.
                     </p>
@@ -89,13 +315,13 @@
                 <article id="programador">
                     <hr>
                     <h3>◻︎❒︎□︎♑︎❒︎♋︎-Programador-◻︎❒︎□︎♑︎❒︎♋︎</h3>
-                    <p>⬧︎♓︎♏︎❍︎◻︎❒︎♏︎ ♒︎♏︎ ❑︎◆︎♏︎❒︎♓︎♎︎□︎ ♒︎♋︎♍︎♏︎❒︎ ◆︎■︎ ❖︎♓︎♎︎♏︎□︎🙰◆︎♏︎♑︎□︎ ⍓︎ ♋︎♍︎⧫︎♋︎◆︎●︎❍︎♏︎■︎⧫︎♏︎ ♏︎⬧︎⧫︎□︎⍓︎ ♏︎⬧︎⧫︎◆︎♎︎♓︎♋︎■︎♎︎□︎ ♏︎⬧︎□︎ ❍︎♓︎⬧︎❍︎□︎📪︎ ♍︎□︎■︎ ♏︎●︎ ◻︎❒︎□︎◻︎□︎⬧︎♓︎⧫︎□︎ ♎︎♏︎ ♒︎♋︎♍︎♏︎❒︎ ◆︎■︎ ❒︎◻︎♑︎ ♍︎□︎■︎ ❍︎♓︎ ❍︎◆︎■︎♎︎□︎ ⍓︎ ◻︎♏︎❒︎⬧︎□︎■︎♋︎🙰♏︎⬧︎ ❑︎◆︎♏︎ ●︎●︎♏︎❖︎□︎ ♏︎●︎♋︎♌︎□︎❒︎♋︎■︎♎︎□︎ ♎︎♏︎⬧︎♎︎♏︎ ♒︎♋︎♍︎♏︎ ❍︎◆︎♍︎♒︎□︎ ⧫︎♓︎♏︎❍︎◻︎□︎ ⍓︎ ❍︎♏︎ ♏︎■︎♍︎♋︎■︎⧫︎♋︎❒︎♓︎♋︎ ●︎●︎♏︎♑︎♋︎❒︎ ♋︎ ◆︎■︎ ◻︎◆︎■︎⧫︎□︎ ♏︎■︎ ♏︎●︎ ❑︎◆︎♏︎ ⬧︎♏︎♋︎ ❍︎♏︎♍︎♋︎■︎♓︎♍︎♋︎❍︎♏︎■︎⧫︎♏︎ ♍︎□︎❍︎◻︎●︎♏︎🙰□︎ </p>
+                    <p>⬧︎♓︎♏︎❍︎◻︎❒︎♏︎ ♒︎♏︎ ❑︎◆︎♏︎❒︎♓︎♎︎□︎ ♒︎♋︎♍︎♏︎❒︎ ◆︎■︎ ❖︎♓︎♎︎♏︎□︎🙰◆︎♏︎♑︎□︎ ⍓︎ ♋︎♍︎⧫︎♋︎◆︎●︎❍︎♏︎■︎⧫︎♏︎ ♏︎⬧︎⧫︎□︎⍓︎ ♏︎⬧︎⧫︎◆︎♎︎♓︎♋︎■︎♎︎□︎ ♏︎⬧︎□︎ ❍︎♓︎⬧︎❍︎□︎📪︎ ♍︎□︎■︎ ♏︎●︎ ◻︎❒︎□︎◻︎□︎⬧︎♓︎⧫︎□︎ ♎︎♏︎ ♒︎♋︎♍︎♏︎❒︎ ◆︎■︎ ❒︎◻︎♑︎ ♍︎□︎■︎ ❍︎♓︎ ❍︎◆︎■︎♎︎□︎ ⍓︎ ◻︎♏︎❒︎⬧︎□︎■︎♋︎🙰♏︎⬧︎ ❑︎◆︎♏︎ ●︎●︎♏︎❖︎□︎ ♏︎●︎♋︎♌︎□︎❒︎♋︎■︎♎︎□︎ ♎︎♏︎⬧︎♎︎♏︎ ♒︎♋︎♍︎♏︎ ❍︎◆︎♍︎♒︎□︎ ⧫︎♓︎♏︎❍︎◻︎□︎ ⍓︎ ❍︎♏︎ ♏︎■︎♍︎♋︎■︎⧫︎♋︎❒︎♓︎♋︎ ●︎●︎♏︎♑︎♋︎❒︎ ♋︎ ◆︎■︎ ◻︎◆︎■︎⧫︎□︎ ♏︎■︎ ♏︎●︎ ❑︎◆︎♏︎ ⬧︎♏︎♋︎ ❍︎♏︎♍︎♋︎■︎♓︎♍︎♋︎❍︎♏︎■︎⧫︎♏︎ ♍︎□︎❍︎◻︎●︎♏︎🙰□︎</p>
                 </article>
 
                 <article id="escritor">
                     <hr>
                     <h3>♏︎♍︎❒︎♓︎⧫︎-Escritor-♏︎♍︎❒︎♓︎⧫︎</h3>
-                    <p>❍︎♏︎ ♏︎■︎♍︎♋︎■︎⧫︎♋︎ ♏︎⬧︎♍︎❒︎♓︎♌︎♓︎❒︎ ⍓︎ ♋︎❍︎□︎ ●︎♋︎⬧︎ ■︎♋︎❒︎❒︎♋︎⧫︎♓︎❖︎♋︎⬧︎ ♍︎□︎❍︎◻︎●︎♏︎🙰♋︎⬧︎ ⍓︎ ♍︎□︎■︎ ⬧︎♓︎♑︎■︎♓︎♐︎♓︎♍︎♋︎♎︎□︎⬧︎ ❍︎♋︎⬧︎ ♏︎●︎♋︎♌︎□︎❒︎♋︎♎︎□︎⬧︎ ❑︎◆︎♏︎ ❒︎♏︎❑︎◆︎♓︎♏︎❒︎♏︎■︎ ❑︎◆︎♏︎ ●︎□︎ ❖︎♏︎♋︎⬧︎ ❍︎♋︎⬧︎ ♎︎♏︎ ◆︎■︎♋︎ ❖︎♏︎⌘︎ ⍓︎ ●︎□︎ ◻︎♓︎♏︎■︎⬧︎♏︎⬧︎ ◻︎□︎❒︎ ◆︎■︎ ♌︎◆︎♏︎■︎ ⧫︎♓︎♏︎❍︎◻︎□︎ ♋︎●︎♑︎□︎ ♋︎■︎♋︎●︎♓︎⧫︎♓︎♍︎□︎ ⍓︎ ♋︎♌︎♓︎♏︎❒︎⧫︎□︎ ●︎□︎⬧︎ ◻︎♏︎❒︎⬧︎□︎■︎♋︎🙰♏︎⬧︎ ●︎●︎♏︎❖︎♋︎■︎ ♋︎ ●︎♋︎ ⧫︎❒︎♋︎❍︎♋︎ ■︎□︎ ●︎♋︎ ⧫︎❒︎♋︎❍︎♋︎ ♋︎ ●︎□︎⬧︎ ◻︎♏︎❒︎⬧︎□︎■︎♋︎🙰♏︎⬧︎ </p>
+                    <p>❍︎♏︎ ♏︎■︎♍︎♋︎■︎⧫︎♋︎ ♏︎⬧︎♍︎❒︎♓︎♌︎♓︎❒︎ ⍓︎ ♋︎❍︎□︎ ●︎♋︎⬧︎ ■︎♋︎❒︎❒︎♋︎⧫︎♓︎❖︎♋︎⬧︎ ♍︎□︎❍︎◻︎●︎♏︎🙰♋︎⬧︎ ⍓︎ ♍︎□︎■︎ ⬧︎♓︎♑︎■︎♓︎♐︎♓︎♍︎♋︎♎︎□︎⬧︎ ❍︎♋︎⬧︎ ♏︎●︎♋︎♌︎□︎❒︎♋︎♎︎□︎⬧︎ ❑︎◆︎♏︎ ❒︎♏︎❑︎◆︎♓︎♏︎❒︎♏︎■︎ ❑︎◆︎♏︎ ●︎□︎ ❖︎♏︎♋︎⬧︎ ❍︎♋︎⬧︎ ♎︎♏︎ ◆︎■︎♋︎ ❖︎♏︎⌘︎ ⍓︎ ●︎□︎ ◻︎♓︎♏︎■︎⬧︎♏︎⬧︎ ◻︎□︎❒︎ ◆︎■︎ ♌︎◆︎♏︎■︎ ⧫︎♓︎♏︎❍︎◻︎□︎ ♋︎●︎♑︎□︎ ♋︎■︎♋︎●︎♓︎⧫︎♓︎♍︎□︎ ⍓︎ ♋︎♌︎♓︎♏︎❒︎⧫︎□︎ ●︎□︎⬧︎ ◻︎♏︎❒︎⬧︎□︎■︎♋︎🙰♏︎⬧︎ ●︎●︎♏︎❖︎♋︎■︎ ♋︎ ●︎♋︎ ⧫︎❒︎♋︎❍︎♋︎ ■︎□︎ ●︎♋︎ ⧫︎❒︎♋︎❍︎♋︎ ♋︎ ●︎□︎⬧︎ ◻︎♏︎❒︎⬧︎□︎■︎♋︎🙰♏︎⬧︎</p>
                 </article>
             </section>
         </main>
@@ -106,9 +332,9 @@
             <a title="visitame en youtube" class="button" target="_blank" href="https://www.youtube.com/@yuyoram4419/featured"><i class="fa-brands fa-youtube"></i></a>
             <a title="visitame en instagram" class="button" target="_blank" href="https://www.instagram.com/yuyotronic99?igsh=MWN0M2tjNWs2Z2hqOQ%3D%3D&utm_source=qr"><i class="fa-brands fa-square-instagram"></i></a>
         </footer>
-    </div> <!-- end page-content -->
+    </div> 
 
-    <!-- 🔹 Script to handle the loader -->
+    
     <script>
         setTimeout(() => {
             const loader = document.getElementById("loading");
@@ -119,7 +345,14 @@
             loader.addEventListener("transitionend", () => {
                 content.style.display = "block";
             });
-        }, 3000); // 3 seconds
+        }, 3000); 
+
+       
+        document.querySelectorAll(".button").forEach(btn => {
+            btn.addEventListener("click", () => {
+                document.body.classList.toggle("inverted");
+            });
+        });
     </script>
 </body>
 </html>
