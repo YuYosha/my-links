@@ -1,1 +1,1 @@
-resumen de todo 
+resumen de todo, trabajo viernes, dios salvame este codigo es un desmadre total ayuda

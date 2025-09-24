@@ -1,4 +1,5 @@
-:root {
+
+  :root {
     --accent: #007BFF;
   }
   
@@ -233,4 +234,5 @@
     50% {
       transform: translateY(-15px);
     }
-  }
+  } 
+  
