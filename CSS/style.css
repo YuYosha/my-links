@@ -93,7 +93,7 @@
     transition: transform 0.3s ease, color 0.3s ease;
   }
   
-  h1:hover {
+  h1:hover { 
     transform: scale(1.05);
     color: #000000;
   }
